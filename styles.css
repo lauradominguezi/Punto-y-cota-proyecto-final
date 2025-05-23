@@ -1,0 +1,278 @@
+/* Estilos generales del cuerpo del sitio */
+body {
+  font-family: 'Arial', sans-serif; /* Fuente principal */
+  margin: 0; /* Quita márgenes predeterminados */
+  padding: 0; /* Quita relleno predeterminado */
+  background: #f4f4f4; /* Color de fono */
+  color: #333; /* Color del texto */}
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;}
+
+  nav {
+    background-color: #2c3e50;
+    padding: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;}
+
+  .menu-left,
+  .menu-center,
+  .menu-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;}
+
+  .menu-left {
+    flex: 1;}
+
+  .menu-center {
+    flex: 1;
+    justify-content: center;}
+
+  .menu-right {
+    flex: 1;
+    justify-content: flex-end;}
+
+  /* Lista principal */
+  #menu {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;}
+
+  #menu li {
+    position: relative;}
+
+  #menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;}
+
+  #menu li a:hover {
+    color: #f70404;}
+
+  /* Submenú */
+  .catalogo-submenu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #34495e;
+    list-style: none;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 100;}
+
+  .catalogo-menu-item.open .catalogo-submenu {
+    display: block;}
+
+  .catalogo-submenu li a {
+    color: #ddd;
+    display: block;
+    padding: 5px 10px;}
+
+  .catalogo-submenu li a:hover {
+    background-color: antiquewhite;
+    color: #2c3e50;}
+
+  /* Buscar */
+  .search-box input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;}
+
+  /* Iniciar sesión */
+  .login-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;}
+
+  .login-btn:hover {
+    color: #f70404;}
+
+  /* Carrito */
+  .cart {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;}
+
+.cart-price {
+  font-weight: bold;
+  color: white;}
+
+/* Logo */
+.logo img {
+  height: 40px;}
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;}
+
+    .menu-left,
+    .menu-center,
+    .menu-right {
+      flex: none;
+      width: 100%;
+      justify-content: center;
+      margin: 5px 0;}
+
+    #menu {
+      flex-wrap: wrap;
+      justify-content: center;}
+  }
+/* Estilos para secciones generales */
+section {
+  padding: 50px; /* Espaciado interno */
+  background: white; /* Fondo blanco */
+  margin: 20px; /* Margen exterior */
+  border-radius: 8px; /* Bordes redondeados */}
+  
+/* Marcador de posición para imágenes, Contenedor principal de la imagen */
+.imagen-placeholder1 {
+  width:auto; /* Ancho completo */
+  height:auto; /* Altura fija */
+  background:  #c1d3e8; /* Fondo azul claro */
+  margin-top: 2px; /* Margen superior */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  font-style: italic; /* Texto en cursiva */
+  color: #555; /* Color del texto */
+  position: relative;  /* Necesario para que los elementos absoluta se posicionen respecto a este */}
+
+/* Contenedor del texto que irá sobre la imagen */
+.texto-sobre-imagen {
+  position: absolute;  /* Permite colocar este texto encima de la imagen */
+  top: 20%;            /* Se posiciona al 20% desde la parte superior del contenedor */
+  left: 50%;           /* Centrado horizontalmente */
+  color: white;        /* Texto blanco */
+  border-radius: 8px;  /* Bordes redondeados */
+  display: block; }
+
+.texto-sobre-imagen h1 {
+  margin: 0;           /* Elimina márgenes por defecto del h1 */
+  font-size: 80px;      /* Tamaño de fuente */}
+
+/* Marcador de posición para imágenes */
+.imagen-placeholder2 {
+  width: auto; /* Ancho completo */
+  height:auto ; /* Altura fija */
+  background:   #d49c6e ; /* Fondo nranja claro */
+  margin-top: 10px; /* Margen superior */
+  display: flex; /* Flex para centrar contenido */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  font-style: italic; /* Texto en cursiva */
+  color: #555; /* Color del texto */}
+
+/* Marcador de posición para imágenes */
+.imagen-placeholder3 {
+  width:auto; /* Ancho completo */
+  height:auto; /* Altura fija */
+  background:  #ebebeb; /* Fondo gris claro */
+  margin-top: 10px; /* Margen superior */
+  display: flex; /* Flex para centrar contenido */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  font-style: italic; /* Texto en cursiva */
+  color: #555; /* Color del texto */}
+ 
+/* Estilos del formulario */
+form {
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Dirección vertical */}
+  
+input, textarea {
+  margin-bottom: 10px; /* Espacio entre campos */
+  padding: 8px; /* Espaciado interno */
+  border: 1px solid #aaa; /* Borde gris */
+  border-radius: 4px; /* Bordes redondeados */}
+  
+button[type="submit"] {
+  background: #27ae60; /* Verde */
+  color: white; /* Texto blanco */
+  padding: 10px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cursor en forma de mano */}
+
+  
+footer {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #000000;
+  color: white;}
+
+.producto {
+  border: 1px solid #938f8f;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  display: inline-block;
+  border-radius: 8px;  /* Bordes redondeados */
+  text-align: center;
+  background-color:white;}
+
+.producto img {
+  width: 100px;
+  height: 100px;}
+
+  .producto1 {
+  border: 1px solid #938f8f;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  display: inline-block;
+  border-radius: 8px;  /* Bordes redondeados */
+  text-align: center;
+  background-color:white;
+}
+
+.producto1 img {
+  width: 300px;
+  height: 300px;}
+
+/* Títulos */
+h2 {
+  color: #0073aa;
+  margin-bottom: 25px;}
+
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;}
+
+form, .order-summary {
+  width: 45%;}
+
+.producto-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;}
+
+  .producto-item img {
+  width: 60px;
+  height: 60px;}
+    
+input[type="number"] {
+  width: 50px;}

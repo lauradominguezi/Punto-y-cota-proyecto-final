@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Punto y Cota</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+</head>
+<body>
+<!-- ======= MENÚ ======= -->
+<nav>
+  <!-- Lado Izquierdo: Menú principal -->
+  <div class="menu-left">
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="catalogo-menu-item">
+        <a href="#" id="catalogo-toggle">Catálogo ▾</a>
+        <ul class="catalogo-submenu">
+          <li><a href="pines.html">Pines</a></li>
+          <li><a href="stickers.html">Stickers</a></li>
+          <li><a href="termos.html">Termos</a></li>
+          <li><a href="pocillos.html">Pocillos</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#preventa">Preventa</a></li>
+      <li><a href="index.html#colecciones">Colecciones</a></li>
+      <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
+      <li><a href="contactenos.html">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Centro: Logo -->
+  <div class="menu-center logo">
+    <a href="index.html">
+      <img src="imagenes/Imagen1.png" alt="Logo">
+    </a>
+  </div>
+
+  <!-- Derecha: Buscar, sesión y carrito -->
+  <div class="menu-right">
+    <a href="micuenta.html" class="login-btn">Iniciar sesión</a>
+    <a href="checkout.html" class="cart">
+      🛒 <span class="cart-count" id="cart-count">0</span>
+    </a>
+    <div class="cart-price" id="cart-price">$0.00</div>
+  </div>
+</nav>
+</head>
+<section id="Finalizarcompra">
+<h1>Finalizar Compra</h1>
+<div class="checkout-container">
+  <form id="checkout-form">
+    <h1>Datos del comprador</h1>
+      <label>Nombre completo:<br><input type="text" required></label><br>
+      <label>Correo electrónico:<br><input type="email" required></label><br>
+      <label>Dirección:<br><input type="text" required></label><br>
+      <label>Ciudad:<br><input type="text" required></label><br>
+      <label>Código postal:<br><input type="text" required></label><br>
+    </form>
+
+    <div class="order-summary">
+      <h1>Tu pedido</h1>
+      <ul id="cart-list" style="list-style: none; padding-left: 0;"></ul>
+      <p>Subtotal: $<span id="subtotal">0</span></p>
+      <p>Envío: $<span id="envio">5000</span></p>
+      <p><strong>Total: $<span id="total">0</span></strong></p>
+      <button onclick="finalizarCompra()">Finalizar compra</button>
+    </div>
+  </div>
+</body>
+  <script>
+    let carrito = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      mostrarCarrito();
+    });
+
+    function mostrarCarrito() {
+      const lista = document.getElementById('cart-list');
+      lista.innerHTML = '';
+      const subtotalElem = document.getElementById('subtotal');
+      const totalElem = document.getElementById('total');
+      const envio = 5000;
+      let subtotal = 0;
+
+      carrito.forEach((producto, index) => {
+        const li = document.createElement('li');
+        li.className = 'producto-item';
+
+        const img = document.createElement('img');
+        img.src = producto.imagen;
+        img.alt = producto.nombre;
+
+        const nombre = document.createElement('span');
+        nombre.textContent = producto.nombre;
+
+        const precio = document.createElement('span');
+        precio.textContent = ` - $${producto.precio}`;
+
+        const inputCantidad = document.createElement('input');
+        inputCantidad.type = 'number';
+        inputCantidad.value = producto.cantidad;
+        inputCantidad.min = 1;
+        inputCantidad.onchange = () => actualizarCantidad(index, parseInt(inputCantidad.value));
+
+        const subtotalItem = document.createElement('span');
+        subtotalItem.textContent = ` = $${(producto.precio * producto.cantidad).toFixed(2)}`;
+
+        const btnEliminar = document.createElement('button');
+        btnEliminar.textContent = 'Eliminar 1';
+        btnEliminar.onclick = () => restarUnidad(index);
+
+        li.appendChild(img);
+        li.appendChild(nombre);
+        li.appendChild(precio);
+        li.appendChild(document.createTextNode(' x '));
+        li.appendChild(inputCantidad);
+        li.appendChild(subtotalItem);
+        li.appendChild(btnEliminar);
+
+        lista.appendChild(li);
+
+        subtotal += producto.precio * producto.cantidad;
+      });
+
+      subtotalElem.textContent = subtotal.toFixed(2);
+      totalElem.textContent = (subtotal + envio).toFixed(2);
+    }
+
+    function actualizarCantidad(index, nuevaCantidad) {
+      if (nuevaCantidad < 1) return;
+      carrito[index].cantidad = nuevaCantidad;
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      mostrarCarrito();
+    }
+
+    function restarUnidad(index) {
+      if (carrito[index].cantidad > 1) {
+        carrito[index].cantidad -= 1;
+      } else {
+        carrito.splice(index, 1); // eliminar el producto si llega a 0
+      }
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      mostrarCarrito();
+    }
+
+    function finalizarCompra() {
+      alert("¡Gracias por tu compra!");
+      localStorage.removeItem('carrito');
+      location.reload(); // refrescar para limpiar vista
+    }
+  </script>
+  <script src="script.js"></script>
+  </body>
+    <footer>
+    <h3>Información de contacto</h3>
+    <p>Dirección: Bogota D.C colombia</p>
+    <p>Teléfono: +57 355 694 578 <br> +57 652 845 987</p>
+    <p>Correo electrónico: <a href="mailto:laura.dominguezi@uniagustiniana.edu.co">laura.dominguezi@uniagustiniana.edu.co</a></p>
+  </footer>
+</html>

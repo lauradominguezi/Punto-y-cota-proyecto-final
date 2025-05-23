@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto y Cota</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ======= MENÚ ======= -->
+<nav>
+  <!-- Lado Izquierdo: Menú principal -->
+  <div class="menu-left">
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="catalogo-menu-item">
+        <a href="#" id="catalogo-toggle">Catálogo ▾</a>
+        <ul class="catalogo-submenu">
+          <li><a href="pines.html">Pines</a></li>
+          <li><a href="stickers.html">Stickers</a></li>
+          <li><a href="termos.html">Termos</a></li>
+          <li><a href="pocillos.html">Pocillos</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#preventa">Preventa</a></li>
+      <li><a href="index.html#colecciones">Colecciones</a></li>
+      <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
+      <li><a href="contactenos.html">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Centro: Logo -->
+  <div class="menu-center logo">
+    <a href="index.html">
+      <img src="imagenes/Imagen1.png" alt="Logo">
+    </a>
+  </div>
+
+  <!-- Derecha: Buscar, sesión y carrito -->
+  <div class="menu-right">
+    <a href="micuenta.html" class="login-btn">Iniciar sesión</a>
+    <a href="checkout.html" class="cart">
+      🛒 <span class="cart-count" id="cart-count">0</span>
+    </a>
+    <div class="cart-price" id="cart-price">$0.00</div>
+  </div>
+</nav>
+    <section id="Stikers">
+    <h1>Catálogo de Stikers</h1>
+    <div class="producto">
+  <h3>Stiker Autocad</h3>
+  <img src="imagenes/s1.png" alt="Stiker autocad">
+  <p>Precio: $5000</p>
+  <button onclick="agregarAlCarrito('Stiker autocad', 5000, 'imagenes/s1.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Stiker Revit</h3>
+  <img src="imagenes/s2.png" alt="Stiker Revit">
+  <p>Precio: $4000</p>
+  <button onclick="agregarAlCarrito('Stiker Revit', 4000, 'imagenes/s2.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Stiker Photoshop</h3>
+  <img src="imagenes/s3.png" alt="Stiker Photoshop">
+  <p>Precio: $13000</p>
+<button onclick="agregarAlCarrito('Stiker Photoshop', 10000, 'imagenes/s3.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Stiker Torre Eiffel</h3>
+  <img src="imagenes/s5.png" alt="Stiker Torre Eiffel">
+  <p>Precio: $11000</p>
+  <button onclick="agregarAlCarrito('Stiker Torre Eiffel', 11000, 'imagenes/s5.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Stiker Torre Di pisa</h3>
+  <img src="imagenes/s8.jpg" alt="Stiker Torre Di pisa">
+  <p>Precio: $10000</p>
+  <button onclick="agregarAlCarrito('Stiker Torre Di pisa', 10000, 'imagenes/s8.jpg')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Stiker Sagrada Familia</h3>
+  <img src="imagenes/s7.jpg" alt="Stiker Sagrada Familia">
+  <p>Precio: $12000</p>
+  <button onclick="agregarAlCarrito('Stiker Sagrada Familia', 12000, 'imagenes/s7.jpg')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Stiker Coliseo Romano</h3>
+  <img src="imagenes/s4.png" alt="Stiker Coliseo Romano">
+  <p>Precio: $12000</p>
+  <button onclick="agregarAlCarrito('Stiker Coliseo Romano', 12000, 'imagenes/s4.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Stikers Edificios emblematicos</h3>
+  <img src="imagenes/s6.png" alt="Stikers Edificios emblematicos">
+  <p>Precio: $13000</p>
+  <button onclick="agregarAlCarrito('Stikers Edificios emblematicos', 13000, 'imagenes/s6.png')">Agregar al carrito</button>
+</div>
+  <br><br>
+  <a href="checkout.html">🛒 Ir al carrito</a>
+
+<script>
+  // Esta función se llama 'agregarAlCarrito' y recibe tres parámetros: nombre, precio e imagen del producto
+  function agregarAlCarrito(nombre, precio, imagen) {
+
+    // Intenta obtener el carrito almacenado en localStorage y lo convierte de texto JSON a objeto JS.
+    // Si no existe ningún carrito (es null), crea un arreglo vacío.
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Busca si ya existe un producto con el mismo nombre en el carrito
+    const productoExistente = carrito.find(p => p.nombre === nombre);
+
+    // Si el producto ya está en el carrito, aumenta su cantidad en 1
+    if (productoExistente) {
+      productoExistente.cantidad += 1;
+    } 
+    // Si el producto no está en el carrito, lo agrega como un nuevo objeto con cantidad 1
+    else {
+      carrito.push({ nombre, precio, imagen, cantidad: 1 });
+    }
+
+    // Convierte el carrito (arreglo de objetos) a texto JSON y lo guarda nuevamente en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+</script>
+  <script src="script.js"></script>
+</body>
+<footer>
+    <h3>Información de contacto</h3>
+    <p>Dirección: Bogota D.C colombia</p>
+    <p>Teléfono: +57 355 694 578 <br> +57 652 845 987</p>
+    <p>Correo electrónico: <a href="mailto:laura.dominguezi@uniagustiniana.edu.co">laura.dominguezi@uniagustiniana.edu.co</a></p>
+  </footer>
+</html>

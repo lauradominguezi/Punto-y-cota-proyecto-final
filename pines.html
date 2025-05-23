@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto y Cota</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ======= MENÚ ======= -->
+<nav>
+  <!-- Lado Izquierdo: Menú principal -->
+  <div class="menu-left">
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="catalogo-menu-item">
+        <a href="#" id="catalogo-toggle">Catálogo ▾</a>
+        <ul class="catalogo-submenu">
+          <li><a href="pines.html">Pines</a></li>
+          <li><a href="stickers.html">Stickers</a></li>
+          <li><a href="termos.html">Termos</a></li>
+          <li><a href="pocillos.html">Pocillos</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#preventa">Preventa</a></li>
+      <li><a href="index.html#colecciones">Colecciones</a></li>
+      <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
+      <li><a href="contactenos.html">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Centro: Logo -->
+  <div class="menu-center logo">
+    <a href="index.html">
+      <img src="imagenes/Imagen1.png" alt="Logo">
+    </a>
+  </div>
+
+  <!-- Derecha: Buscar, sesión y carrito -->
+  <div class="menu-right">
+    <a href="micuenta.html" class="login-btn">Iniciar sesión</a>
+    <a href="checkout.html" class="cart">
+      🛒 <span class="cart-count" id="cart-count">0</span>
+    </a>
+    <div class="cart-price" id="cart-price">$0.00</div>
+  </div>
+</nav>
+    <section id="pines">
+    <h1>Catálogo de Pines</h1>
+  <div class="producto">
+  <h3>Pin Nakagin Capsule Tower</h3>
+  <img src="imagenes/p1.png" alt="Pin Nakagin">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Pin Nakagin Capsule Tower', 22000, 'imagenes/p1.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin la Villa Savoye Le Corbusier</h3>
+  <img src="imagenes/p2.png" alt="Pin la Villa Savoye Le Corbusier">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Pin la Villa Savoye Le Corbusier', 22000, 'imagenes/p2.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin Catedral de Notre Dame</h3>
+  <img src="imagenes/p3.png" alt="Catedral de Notre Dame">
+  <p>Precio: $23000</p>
+  <button onclick="agregarAlCarrito('Catedral de Notre Dame', 23000, 'imagenes/p3.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin TWA Flight Center</h3>
+  <img src="imagenes/p4.png" alt="Pin TWA Flight Center">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Pin TWA Flight Center', 22000, 'imagenes/p4.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin Panteón de Roma</h3>
+  <img src="imagenes/p5.png" alt="Pin Panteón de Roma">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Pin Panteón de Roma', 22000, 'imagenes/p5.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin Museo del Louvre en París</h3>
+  <img src="imagenes/p6.png" alt="Pin Museo del Louvre en París">
+  <p>Precio: $23000</p>
+  <button onclick="agregarAlCarrito('Pin Museo del Louvre en París', 23000, 'imagenes/p6.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin Empire State Building</h3>
+  <img src="imagenes/p7.png" alt="Pin Empire State Building">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Pin Empire State Building', 22000, 'imagenes/p7.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin Catedral de San Basilio</h3>
+  <img src="imagenes/p8.png" alt="Pin Catedral de San Basilio">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Pin Catedral de San Basilio', 22000, 'imagenes/p8.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Nakagin Capsule Tower</h3>
+  <img src="imagenes/p10.png" alt="Nakagin Capsule Tower">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Nakagin Capsule Tower', 22000, 'imagenes/p10.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin Museo de Arte de São Paulo</h3>
+  <img src="imagenes/p11.png" alt="Pin Museo de Arte de São Paulo">
+  <p>Precio: $22000</p>
+  <button onclick="agregarAlCarrito('Pin Museo de Arte de São Paulo', 22000, 'imagenes/p11.png')">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+  <h3>Pin Ópera de Sidney</h3>
+  <img src="imagenes/p12.png" alt="Pin Ópera de Sidney">
+  <p>Precio: $23000</p>
+  <button onclick="agregarAlCarrito('Pin Ópera de Sidney', 23000, 'imagenes/p12.png')">Agregar al carrito</button>
+</div>
+
+  <br><br>
+  <a href="checkout.html">🛒 Ir al carrito</a>
+
+<script>
+  // Esta función se llama 'agregarAlCarrito' y recibe tres parámetros: nombre, precio e imagen del producto
+  function agregarAlCarrito(nombre, precio, imagen) {
+
+    // Intenta obtener el carrito almacenado en localStorage y lo convierte de texto JSON a objeto JS.
+    // Si no existe ningún carrito (es null), crea un arreglo vacío.
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Busca si ya existe un producto con el mismo nombre en el carrito
+    const productoExistente = carrito.find(p => p.nombre === nombre);
+
+    // Si el producto ya está en el carrito, aumenta su cantidad en 1
+    if (productoExistente) {
+      productoExistente.cantidad += 1;
+    } 
+    // Si el producto no está en el carrito, lo agrega como un nuevo objeto con cantidad 1
+    else {
+      carrito.push({ nombre, precio, imagen, cantidad: 1 });
+    }
+
+    // Convierte el carrito (arreglo de objetos) a texto JSON y lo guarda nuevamente en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+</script>
+  <script src="script.js"></script>
+</body>
+<footer>
+    <h3>Información de contacto</h3>
+    <p>Dirección: Bogota D.C colombia</p>
+    <p>Teléfono: +57 355 694 578 <br> +57 652 845 987</p>
+    <p>Correo electrónico: <a href="mailto:laura.dominguezi@uniagustiniana.edu.co">laura.dominguezi@uniagustiniana.edu.co</a></p>
+  </footer>
+</html>

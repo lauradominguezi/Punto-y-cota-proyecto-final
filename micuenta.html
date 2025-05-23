@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto y Cota</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ======= MENÚ ======= -->
+<nav>
+  <!-- Lado Izquierdo: Menú principal -->
+  <div class="menu-left">
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="catalogo-menu-item">
+        <a href="#" id="catalogo-toggle">Catálogo ▾</a>
+        <ul class="catalogo-submenu">
+          <li><a href="pines.html">Pines</a></li>
+          <li><a href="stickers.html">Stickers</a></li>
+          <li><a href="termos.html">Termos</a></li>
+          <li><a href="pocillos.html">Pocillos</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#preventa">Preventa</a></li>
+      <li><a href="index.html#colecciones">Colecciones</a></li>
+      <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
+      <li><a href="contactenos.html">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Centro: Logo -->
+  <div class="menu-center logo">
+    <a href="index.html">
+      <img src="imagenes/Imagen1.png" alt="Logo">
+    </a>
+  </div>
+
+  <!-- Derecha: Buscar, sesión y carrito -->
+  <div class="menu-right">
+    <a href="micuenta.html" class="login-btn">Iniciar sesión</a>
+    <a href="checkout.html" class="cart">
+      🛒 <span class="cart-count" id="cart-count">0</span>
+    </a>
+    <div class="cart-price" id="cart-price">$0.00</div>
+  </div>
+</nav>
+
+  <!-- Mi Cuenta -->
+  <section id="cuenta">
+    <h1>Mi Cuenta</h1>
+    <p>Revisa tu historial de pedidos, reservas y preferencias guardadas.</p>
+
+  <div class="form-container">
+    <h2>Crear Cuenta</h2>
+    <form id="registerForm">
+      <label for="username">Nombre de Usuario</label>
+      <input type="text" id="username" required>
+
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" required>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" required>
+
+      <label for="confirmPassword">Confirmar Contraseña</label>
+      <input type="password" id="confirmPassword" required>
+
+      <button type="submit">Registrarse</button>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<footer>
+    <h3>Información de contacto</h3>
+    <p>Dirección: Bogota D.C colombia</p>
+    <p>Teléfono: +57 355 694 578 <br> +57 652 845 987</p>
+    <p>Correo electrónico: <a href="mailto:laura.dominguezi@uniagustiniana.edu.co">laura.dominguezi@uniagustiniana.edu.co</a></p>
+  </footer>
+</html>
